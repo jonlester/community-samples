@@ -1,0 +1,25 @@
+---
+name: Content Submission
+about: Submit your own content to be included on this site
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+body:
+- type: input
+  id: prevalence
+  attributes:
+    label: Content Url
+    description: "Enter the full Url of the repository for your submission."
+    placeholder: "https://github.com/user/repo"
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Description
+    description: Provide a short description of your submission.
+    placeholder: "Format: The problem it solves + who it solves it for + what's unique about the solution"
+  validations:
+    required: true
