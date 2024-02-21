@@ -1,7 +1,6 @@
 name: Content Submission
 description: Submit your own content to be included on this site
-title: "[Submission]: "
-labels: bug
+labels: enhancement
 body:
 - type: input
   id: prevalence
