@@ -3,7 +3,7 @@ description: Submit your own content to be included on this site
 labels: enhancement
 body:
 - type: input
-  id: prevalence
+  id: url
   attributes:
     label: Content Url
     description: "Enter the full Url of the repository for your submission."
@@ -11,6 +11,7 @@ body:
   validations:
     required: true
 - type: textarea
+  id: description
   attributes:
     label: Description
     description: Provide a short description of your submission.
