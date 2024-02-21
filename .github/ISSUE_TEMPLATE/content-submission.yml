@@ -1,8 +1,7 @@
 name: Content Submission
 about: Submit your own content to be included on this site
-title: ''
-labels: ''
-assignees: ''
+title: "[Submission]: "
+labels: bug
 body:
 - type: input
   id: prevalence
