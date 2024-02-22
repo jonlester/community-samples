@@ -19,7 +19,7 @@
 // @ts-check
 module.exports = async ({github, context, core, glob, io, exec, require}) => {
   const {SHA} = process.env;
-  const Parser = require('../helpers/issue-body-parser.js');
+  const Parser = require('../../src/helpers/issue-body-parser.js');
   const bodyParser = new Parser();
   const issue = await github.rest.issues.get({...context.issue, issue_number: context.issue.number});
   const parsed = bodyParser.parse(issue.data.body);
