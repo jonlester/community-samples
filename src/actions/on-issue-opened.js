@@ -26,5 +26,6 @@ module.exports = async ({github, context, core, glob, io, exec, require}) => {
   const issue = await github.rest.issues.get({...context.issue, issue_number: context.issue.number});
   const parsed = bodyParser.parse(issue.data.body);
   console.log(`Issue: ${JSON.stringify(parsed)}`);
+  console.log(`body: ${JSON.stringify(issue.data.body)}`);
   core.exportVariable('body', issue.data.body);
 }
