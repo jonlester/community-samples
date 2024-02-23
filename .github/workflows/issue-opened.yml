@@ -13,8 +13,7 @@ jobs:
           template-path: .github/ISSUE_TEMPLATE/content-submission.yml 
       - uses: actions/github-script@v7
         with:
-          issue-body: 
           script: |
             const script = require('./src/actions/on-issue-opened.js')
-            const parsedBody = JSON.parse(${{ steps.issue-parser.outputs.jsonString }})
+            const parsedBody = JSON.parse($'{{ steps.issue-parser.outputs.jsonString }}')
             await script({github, context, core, glob, io, exec, require}, parsedBody)
