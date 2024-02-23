@@ -15,5 +15,5 @@ jobs:
         with:
           script: |
             const script = require('./src/actions/on-issue-opened.js')
-            const parsedBody = JSON.parse($'{{ steps.issue-parser.outputs.jsonString }}')
+            const parsedBody = JSON.parse('${{ steps.issue-parser.outputs.jsonString }}')
             await script({github, context, core, glob, io, exec, require}, parsedBody)
