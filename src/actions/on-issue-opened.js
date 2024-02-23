@@ -13,14 +13,13 @@
  * io -  A reference to the @actions/io package
  * exec - A reference to the @actions/exec package
  * require - require A proxy wrapper around the normal Node.js require to enable requiring cwd relative paths 
- * @param {string} parsedBody - The parsed body of the issue
  * @throws {Error} If there is an error fetching the commit or exporting the variable.
  * @returns {Promise<void>} A Promise that resolves when the function has completed.
 */
 // @ts-check
-module.exports = async ({github, context, core, glob, io, exec, require}, parsedBody) => {
+module.exports = async ({github, context, core, glob, io, exec, require}) => {
   const {SHA} = process.env;
-  
+  const parsedBody = core.getInput('issue-body', { required: true });
   // @ts-ignore - the injected require wrapper uses root-relative paths
   const issue = await github.rest.issues.get({...context.issue, issue_number: context.issue.number});
 
